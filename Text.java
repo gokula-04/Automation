@@ -1,16 +1,18 @@
 package selenium;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Text {
-    public static void main(String[] args) {
-        System.setProperty("Webdriver.chrome.driver", "H:\\\\GOKUL\\\\Testing\\\\gok\\\\automation\\\\lib\\\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://only-testing-blog.blogspot.com/2014/01/textbox.html");
-
-
-        driver.findElement(By.xpath("//*[@id='text2']")).sendKeys("gokul");
-    }
+    public static void main(String[] args) throws IOException {
+         String path = "H:\\GOKUL\\Seleniumpro\\Ex files\\text.txt";
+         @SuppressWarnings("resource")
+        BufferedReader buff = new BufferedReader(new FileReader(path));
+         String startLine;
+         while ((startLine = buff.readLine())!=null){
+            System.out.println(startLine);
+            
+         }
+    }   
 }
